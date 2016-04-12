@@ -29,8 +29,6 @@ module.exports = function(config) {
       },
       externals: {
         'cheerio': 'window',
-        // I needed this for React 0.14. It doesn't seem to be needed for React 15, but it might be needed after I use enzyme's mount method, which I haven't used yet (in this repo).
-        // 'react-dom/server': 'window',
         'react/lib/ExecutionEnvironment': true,
         'react/lib/ReactContext': true,
         // See https://github.com/airbnb/enzyme/issues/47#issuecomment-207498885
