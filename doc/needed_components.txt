@@ -1,0 +1,28 @@
+Needed components
+
+* Routing
+* Layout
+* Welcome
+* Register
+* Login
+* Logout
+* Dashboard
+* Create
+* Show
+* Edit
+
+
+Data
+
+* User
+ * Name
+ * Avatar
+
+* Quote
+ * Creator (User)
+ * Phrases
+
+Phrase
+ * Sequence number
+ * Said by (User)
+ * Text
