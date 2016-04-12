@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react'
+import QuoteList from './QuoteList'
 
 class Dashboard extends Component {
   render() {
-    return <div>hi</div>
+    return <QuoteList/>
   }
 }
 
