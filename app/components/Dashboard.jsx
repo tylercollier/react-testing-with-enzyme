@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
-class Dashbaord extends Component {
+class Dashboard extends Component {
 
 }
 
+export default Dashboard
