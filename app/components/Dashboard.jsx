@@ -3,7 +3,12 @@ import QuoteList from './QuoteList'
 
 class Dashboard extends Component {
   render() {
-    return <QuoteList/>
+    return (
+      <div>
+        <p>Here are the most recent quotes</p>
+        <QuoteList/>
+      </div>
+    )
   }
 }
 

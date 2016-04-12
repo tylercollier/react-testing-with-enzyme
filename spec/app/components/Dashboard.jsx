@@ -6,10 +6,10 @@ import QuoteList from '../../../app/components/QuoteList'
 
 describe(Dashboard, () => {
   it('outputs the text hi', () => {
-    expect(shallow(<Dashboard/>).text()).to.equal("hi")
+    expect(shallow(<Dashboard/>).text()).to.contain("Here are the most recent quotes")
   })
   it('renders HTML', () => {
-    expect(shallow(<Dashboard/>).equals(<div>hi</div>)).to.equal(true)
+    expect(shallow(<Dashboard/>).contains(<p>Here are the most recent quotes</p>)).to.equal(true)
   })
   it('mounts and can find an internal component', () => {
     expect(mount(<Dashboard/>).find(QuoteList).length).to.equal(1)
