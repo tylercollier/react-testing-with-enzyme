@@ -32,5 +32,17 @@ describe('Dashboard', () => {
       TestUtils.Simulate.click(dashboard.refs.createQuoteLink)
       expect(handleCreateLink).to.have.been.called
     })
+
+    it("handles clicking 'Like'", () => {
+      const handleLikeQuote = sinon.spy()
+      const dashboard = TestUtils.renderIntoDocument(<Dashboard quotes={_quotes} onLikeQuote={handleLikeQuote}/>)
+      const quoteCollection = TestUtils.scryRenderedComponentsWithType(dashboard, QuoteCollection)
+      expect(quoteCollection).to.have.length.of(1)
+      const quotes = TestUtils.scryRenderedComponentsWithType(quoteCollection[0], Quote)
+      expect(quotes).to.have.length.of(3)
+      const quote = quotes[2]
+      TestUtils.Simulate.click(quote.refs.likeLink)
+      expect(handleLikeQuote).to.have.been.called
+    })
   })
 })
