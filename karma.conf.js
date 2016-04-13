@@ -22,13 +22,12 @@ module.exports = function(config) {
         noParse: [/\/sinon\.js/]
       },
       resolve: {
-        extensions: ["", ".js", ".jsx"],
+        extensions: ["", ".js", ".jsx", ".json"],
         alias: {
           sinon: 'sinon/pkg/sinon'
         }
       },
       externals: {
-        'cheerio': 'window',
         'react/lib/ExecutionEnvironment': true,
         'react/lib/ReactContext': true,
         // See https://github.com/airbnb/enzyme/issues/47#issuecomment-207498885
