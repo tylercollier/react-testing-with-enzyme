@@ -1,15 +1,19 @@
 import React, { Component, PropTypes } from 'react'
-import QuoteList from './QuoteList'
+import QuoteCollection from './QuoteCollection'
 
 class Dashboard extends Component {
   render() {
     return (
       <div>
         <p>Here are the most recent quotes</p>
-        <QuoteList/>
+        <QuoteCollection quotes={this.props.quotes}/>
       </div>
     )
   }
+}
+
+Dashboard.propTypes = {
+  quotes: PropTypes.array
 }
 
 export default Dashboard
