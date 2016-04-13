@@ -6,6 +6,7 @@ class Dashboard extends Component {
     return (
       <div>
         <p>Here are the most recent quotes</p>
+        <p><a ref='createQuoteLink' onClick={this.props.onCreateLink}>Create a new quote</a></p>
         <QuoteCollection quotes={this.props.quotes}/>
       </div>
     )
@@ -13,7 +14,8 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-  quotes: PropTypes.array
+  quotes: PropTypes.array,
+  onCreateLink: PropTypes.func
 }
 
 export default Dashboard

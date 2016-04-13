@@ -7,10 +7,11 @@ import PhraseCollection from '../../../app/components/PhraseCollection'
 import Phrase from '../../../app/components/Phrase'
 import TestUtils from 'react-addons-test-utils'
 import _quotes from '../../../fixtures/quotes'
+import sinon from 'sinon'
 
 chai.use(chaiEnzyme())
 
-describe(Dashboard, () => {
+describe('Dashboard', () => {
   context("with Facebook's test utils", () => {
     it('renders a full section of DOM', () => {
       const dashboard = TestUtils.renderIntoDocument(<Dashboard quotes={_quotes}/>)
@@ -23,6 +24,13 @@ describe(Dashboard, () => {
       const phrases = TestUtils.scryRenderedComponentsWithType(phraseCollection[0], Phrase)
       expect(phrases).to.have.length.of(2)
       expect(phrases[0].props.phrase.text).to.equal("Everyone has an irrational fear")
+    })
+
+    it("handles clicking 'Create new quote' button", () => {
+      const handleCreateLink = sinon.spy()
+      const dashboard = TestUtils.renderIntoDocument(<Dashboard quotes={_quotes} onCreateLink={handleCreateLink}/>)
+      TestUtils.Simulate.click(dashboard.refs.createQuoteLink)
+      expect(handleCreateLink).to.have.been.called
     })
   })
 })
