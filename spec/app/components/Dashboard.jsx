@@ -15,15 +15,8 @@ describe(Dashboard, () => {
   context("with enzyme", () => {
     it('renders a full section of DOM', () => {
       const dashboard = mount(<Dashboard quotes={_quotes}/>)
-      const quoteCollection = dashboard.find(QuoteCollection)
-      expect(quoteCollection).to.have.length.of(1)
-      const quotes = quoteCollection.at(0).find(Quote)
-      expect(quotes).to.have.length.of(3)
-      const phraseCollection = quotes.at(2).find(PhraseCollection)
-      expect(phraseCollection).to.have.length.of(1)
-      const phrases = phraseCollection.at(0).find(Phrase)
-      expect(phrases).to.have.length.of(2)
-      expect(phrases.at(0).props().phrase.text).to.equal("Everyone has an irrational fear")
+      expect(dashboard.find(QuoteCollection).at(0).find(Quote).at(2).find(PhraseCollection).at(0).find(Phrase).at(0).props().phrase.text).to.equal("Everyone has an irrational fear")
     })
   })
 })
+
