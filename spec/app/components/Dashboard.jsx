@@ -36,7 +36,7 @@ describe(Dashboard, () => {
       const shallowRenderer = ReactTestUtils.createRenderer()
       shallowRenderer.render(<Dashboard/>)
       const result = shallowRenderer.getRenderOutput()
-      expect(result.props.children[0].props.children).to.equal('Here are the most recent quotes')
+      expect(result.props.children[0].props.children).to.match(/Here are the most recent quotes/)
     })
 
     it('renders HTML', () => {
