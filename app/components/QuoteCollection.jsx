@@ -8,7 +8,7 @@ class QuoteCollection extends Component {
       <div>
       {
         quotes.map(quote => {
-          return <Quote key={quote.id} quote={quote}/>
+          return <Quote key={quote.id} quote={quote} onLike={this.props.onLikeQuote}/>
         })
       }
       </div>
@@ -17,7 +17,8 @@ class QuoteCollection extends Component {
 }
 
 QuoteCollection.propTypes = {
-  quotes: PropTypes.array
+  quotes: PropTypes.array,
+  onLikeQuote: PropTypes.func
 }
 
 export default QuoteCollection
