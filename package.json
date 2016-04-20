@@ -23,9 +23,7 @@
     "include-all": "~0.1.6",
     "rc": "1.0.1",
     "react": "^15.0.1",
-    "react-dom": "^15.0.1",
-    "sails": "~0.12.3",
-    "sails-disk": "~0.10.9"
+    "react-dom": "^15.0.1"
   },
   "scripts": {
     "debug": "node debug app.js",
