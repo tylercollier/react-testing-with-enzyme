@@ -3,10 +3,11 @@ import Quote from './Quote'
 
 class QuoteCollection extends Component {
   render() {
+    const quotes = this.props.quotes || []
     return (
       <div>
       {
-        this.props.quotes.map(quote => {
+        quotes.map(quote => {
           return <Quote key={quote.id} quote={quote}/>
         })
       }
